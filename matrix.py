@@ -2,11 +2,12 @@ import math
 
 
 def print_matrix( matrix ):
-    r = 0
-    c = 0
-    for r in range (4):
-        for c in range (4):
+    row = 0
+    col = 0
+    for c in range (len(matrix)):
+        for r in range (4):
             print matrix[c][r] + " "
+            c = 0
         print "\n"
 
     
@@ -25,9 +26,12 @@ def ident( matrix ):
 #m1 * m2 -> m2
 #change m2 in the end
 def matrix_mult( m1, m2 ):
+    retm = []
     if (len(m1) == len(m2[0])):
         for c in range (4):
             for r in range(4):
+                m[c][r] = m1[c][r]+ m2[r][c]
+        m2 = retm
 
 
 
