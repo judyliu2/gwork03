@@ -14,13 +14,16 @@ def print_matrix( matrix ):
     
 
 def ident( matrix ):
-    m = [];
+    m = []
     for c in range (4):
+        point = []
         for r in range (4):
             if (r == c):
-                m.append(1)
+                point.append(1)
             else:
-                m.append(0)
+                point.append(0)
+
+        m.append(point)
     return m
 
 #m1 * m2 -> m2
@@ -30,7 +33,8 @@ def matrix_mult( m1, m2 ):
     if (len(m1) == len(m2[0])):
         for c in range (4):
             for r in range(4):
-                m[c][r] = m1[c][r]+ m2[r][c]
+                retm[c][r] = retm[c][r] + m1[c][r] * m2[r][c]
+            
         m2 = retm
 
 
