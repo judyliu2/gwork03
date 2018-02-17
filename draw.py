@@ -4,19 +4,16 @@ from matrix import *
 
 def draw_lines( matrix, screen, color ):
     for c in range (len(matrix)-1):
-            draw_line(matrix[c][0], matrix[c][1],matrix[c+1][0],matrix[c+1][1],screen,color)
+        draw_line(matrix[c][0], matrix[c][1],matrix[c+1][0], matrix[c+1][1],screen,color)
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
     add_point(matrix, x0,y0,z0)
-    add_point(matrix, x1, y1, z1);
+    add_point(matrix, x1, y1, z1)
   
 def add_point( matrix, x, y, z=0 ):
     last = len(matrix) -1
-    matrix.append([])
-    matrix[last][0] = x
-    matrix[last][1] = y
-    matrix[last][2] = z
-
+    matrix.append([x,y,z,1])
+ 
 def draw_line( x0, y0, x1, y1, screen, color ):
     #switch coordinates if x0>x1
     
